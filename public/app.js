@@ -2,8 +2,10 @@
 $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
-    // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    // Display the appropriate information on the page
+    $("#articles").append("<div class=card><div class=card-body><p data-id='" + 
+    data[i]._id + "'>" + "<h5>" + data[i].title + "</h5>" + data[i].summary  
+    + "<br />" + "<a href=https://www.nytimes.com" + data[i].link + "> Go to Article</a>" +"</p></div></div>");
   }
 });
 
@@ -14,6 +16,7 @@ $(document).on("click", "p", function() {
   $("#notes").empty();
   // Save the id from the p tag
   var thisId = $(this).attr("data-id");
+  console.log(thisId);
 
   // Now make an ajax call for the Article
   $.ajax({
