@@ -27,7 +27,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://user:password1@ds141320.mlab.com:41320/heroku_6hddwhh5", { useUnifiedTopology: true });
+// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/test';
+// mongoose.connect(MONGODB_URI);
+mongoose.connect("mongodb://user:password1@ds141320.mlab.com:41320/heroku_6hddwhh5");
 
 // Routes
 
