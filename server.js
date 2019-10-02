@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://user:password1@ds141320.mlab.com:41320/heroku_6hddwhh5", { useMongoClient: true });
 
 // Routes
 
